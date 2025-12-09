@@ -187,7 +187,7 @@ async def generate_renovation_rendering(tool_context: ToolContext, inputs: Gener
         rewritten_prompt = rewritten_prompt_response.text
         logger.info(f"Enhanced prompt: {rewritten_prompt}")
 
-        model = "gemini-2.5-flash-image"
+        model = "gemini-3-pro-image-preview"
         
         # Build content parts
         content_parts = [types.Part.from_text(text=rewritten_prompt)]
@@ -307,7 +307,7 @@ async def edit_renovation_rendering(tool_context: ToolContext, inputs: EditRenov
                 if reference_image_part:
                     logger.info(f"Using reference image for editing: {ref_filename}")
 
-        model = "gemini-2.5-flash-image"
+        model = "gemini-3-pro-image-preview"
 
         # Build content parts
         content_parts = [loaded_image_part, types.Part.from_text(text=inputs.prompt)]
